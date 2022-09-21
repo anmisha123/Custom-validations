@@ -5,13 +5,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { TestComponent } from './test/test.component';
+import { StrongPassword } from './shared/strongpassword.directive';
 import { ConfirmEqualValidator } from './shared/confirmequalvalidator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //TestComponent
+    StrongPassword,
     ConfirmEqualValidator
   ],
   imports: [
