@@ -1,80 +1,11 @@
-<h1 class="container">Form Validation</h1><br>
-<div class="col-sp">
-<form [formGroup] ="form" (ngSubmit)="submit()">
-  <label>Full Name</label>
-  <input  class="item1" id="fullname" type="text" formControlName="fullname" class="form-control" />
-  <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)"
-    class="alert alert-danger">
-
-  <div *ngIf="fullname.errors?.['required']">
-    Name is required.
-  </div>
-  <div *ngIf="fullname.errors?.['minlength']">
-    Name must be at least 4 characters long.
-  </div>
-  <div *ngIf="fullname.errors?.['maxlength']">
-    Name must be less than 7 characters long.
-  </div>
-  <div *ngIf="fullname.errors?.['forbiddenName']">
-    {{fullname.errors?.forbiddenName.value}}
-    fullname cannot taken
-  </div>
-</div>
-  <label>User Name</label>
-  <input class="item1" id="username"  type="text" formControlName="username" class="form-control" />
-  <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
-
-  <div *ngIf="username.errors?.['required']">
-    UserName is required.
-  </div>
-  <div *ngIf="username.errors?.['forbiddenName']">
-    {{username.errors?.forbiddenName.value}}
-    username cannot taken
-  </div>
-  </div>
-  <label>Email</label>
-  <input class="item1" type="email" class="form-control" formControlName="email">
-  <div *ngIf="email.invalid && (email.dirty || email.touched)"
-    class="alert alert-danger">
-    <div *ngIf="email.errors.required">
-    Email is required
-    </div>
-    <div *ngIf="email.errors.pattern">
-      Email is not valid
-    </div>
-    <div *ngIf="email.errors?.['emailDomainvalidator']">
-      email domain must be only deloitte.com
-    </div>
-
-  </div>
-
-  
-  <label>Password</label>
-  <input class="item1" strongPassword type="password"  class="form-control" formControlName="password">
-  <div *ngIf="password.invalid && (password.dirty || password.touched)"
-  class="alert alert-danger">
-  <div *ngIf="password.errors?.['required']">
-     password is required.
-  </div>
-  <div *ngIf="password.errors?.['passwordstrong']">
-    password must have atleast 1 Uppercase, 1 Lowercase, 1 Number and 1 Special Symbol
- </div>
-</div>
-
-  <label>Confirm Password</label>
-  <input class="item1" appConfirmEqualValidator [passwordField]="password" type="password" class="form-control" formControlName="confirmpassword">
-  <div *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched)"
-  class="alert alert-danger">
-
-  <div *ngIf="confirmpassword.errors?.['required']">
-     Confirm password is required.
-  </div>
-  <div *ngIf="confirmpassword.errors?.['mismatch']">
-    password and Confirm password must be same
- </div>
-
-</div>
-<br>
-  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">submit</button>
-  </form>
-</div>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">    
+  <a class="navbar-brand" [routerLink]='["/"]'>Reactive Form</a>    
+  <div class="collapse navbar-collapse">    
+      <ul class="navbar-nav mr-auto">    
+          <li class="nav-item">    
+              <a class="nav-link" [routerLink]='["/template-form"]'>Template Form</a>    
+          </li>    
+      </ul>    
+  </div>    
+</nav>  
+<router-outlet></router-outlet>

@@ -1,0 +1,18 @@
+.container{
+    margin-top: 4rem;
+    text-align: center;
+}
+
+form {
+  width: 50vw;
+  margin: auto;
+}
+
+.alert-danger{
+  height: 1rem;
+  margin-bottom: -0.3rem;
+}
+
+.alert-danger div{
+  margin-top: -0.7rem;
+}
